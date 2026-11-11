@@ -96,6 +96,6 @@ earphone = Product("무선이어폰", 89_000, 3)
 
 # 카트 인스턴스 생성
 cart = Cart()
-cart.add(tumbler, 9)
+cart.add(tumbler, 3)
 cart.add(earphone, 2)
-cart.show()
+cart.checkout()
