@@ -73,6 +73,20 @@ class Cart:
         print(f"{'배송비':<10} {self.shipping():>15,}원")
         print(f"{'결제 금액':<10} {self.total():>15,}원")
         print(line)
+    
+    def checkout(self):
+        if self.is_empty() : return
+        
+        self.show()
+        # 재고 감소 처리
+        for p, q in self.items.items():
+            p.stock -= q
+
+        # 장바구니 비우기
+        self.items.clear()
+
+        # 결제 성공여부
+        print("결제가 완료되었습니다. 감사합니다!")
         
 #테스트 코드=========================================
 
